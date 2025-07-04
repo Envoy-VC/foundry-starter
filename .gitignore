@@ -1,17 +1,35 @@
-# Compiler files
-cache/
+# 💾 Dependencies
+dependencies/
+
+# 🔧 Foundry build artifacts & caches
 out/
+cache/
 
-# Ignores development broadcast logs
-!/broadcast
-/broadcast/*/31337/
-/broadcast/**/dry-run/
-broadcast/
+# 🧪 Forge test artifacts
+test_*.json
+*.dbg.json
 
-# Docs
-docs/
-
-# Dotenv file
+# 🔐 Env files & secrets
 .env
-.env.local
 .env.*
+!.env.example
+/*.keystore
+
+# 📊 Coverage & gas reports
+coverage/
+gas-report.*
+
+# 📝 Logs & temporary files
+*.log
+*.tmp
+*.temp
+
+# 🎯 Misc OS-specific
+.DS_Store
+thumbs.db
+
+# ⚙️ Scripting outputs (e.g., Soldeer)
+zkout/
+
+# Local Deployments
+broadcast/**/31337

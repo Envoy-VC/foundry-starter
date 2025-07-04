@@ -6,13 +6,18 @@ import {Test} from "forge-std/Test.sol";
 import {Counter} from "src/Counter.sol";
 import {SetUp} from "test/common/SetUp.sol";
 
-contract CounterFuzzTest is Test, SetUp {
+contract CounterUnitTest is Test, SetUp {
     function setUp() public override {
         super.setUp();
     }
 
-    function testFuzz_setNumber(uint256 x) public {
-        counter.setNumber(x);
-        assertEq(counter.number(), x);
+    function testIncrement() public {
+        counter.increment();
+        assertEq(counter.number(), 1);
+    }
+
+    function testSetNumber() public {
+        counter.setNumber(10);
+        assertEq(counter.number(), 10);
     }
 }
